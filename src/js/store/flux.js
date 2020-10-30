@@ -12,15 +12,40 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			people: [],
+			planet: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
+			loadPeople: () => {
+				fetch("https://swapi.dev/api/people/", {
+					method: `GET`,
+					headers: {
+						"Content-Type": "application/json"
+					}
+				})
+					.then(resp => {
+						console.log(resp.ok);
+						if (!resp.ok) throw Error(resp.statusText);
+						console.log(resp.status);
+						return resp.json();
+					})
+					.then(data => {
+						setStore({ people: data.results });
+					})
+					.catch(error => {
+						console.log(error);
+					});
+				/** https://swapi.dev/api/people/1/
+					fetch("https://swapi.dev/api/people/1/").then().then(data => setStore({ "foo": data.bar }))
+                */
+			},
 			loadSomeData: () => {
-				/**
+				/** 
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
 			},
