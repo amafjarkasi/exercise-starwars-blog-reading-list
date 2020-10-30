@@ -1,5 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Popup from "reactjs-popup";
+import "reactjs-popup/dist/index.css";
 
 function Card(props) {
 	return (
