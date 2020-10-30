@@ -30,9 +30,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 					}
 				})
 					.then(resp => {
-						console.log(resp.ok);
+						//console.log(resp.ok);
 						if (!resp.ok) throw Error(resp.statusText);
-						console.log(resp.status);
+						//console.log(resp.status);
 						return resp.json();
 					})
 					.then(data => {
