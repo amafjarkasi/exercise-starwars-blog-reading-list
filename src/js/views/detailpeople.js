@@ -25,7 +25,7 @@ export const DetailPeople = () => {
 						</div>
 					</div>
 				</div>
-				<div className="col-4">
+				<div className="col-4 bg-light pt-2">
 					<ul className="list-unstyled font-weight-bold">
 						<li>Birth Year: {store.people[params.theid].birth_year}</li>
 						<li>Eye Color: {store.people[params.theid].eye_color}</li>
