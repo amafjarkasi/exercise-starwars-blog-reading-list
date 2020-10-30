@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-export const DetailPeople = () => {
+export const DetailPlanets = () => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 	return (
@@ -17,7 +17,7 @@ export const DetailPeople = () => {
 							alt="Generic placeholder image"
 						/>
 						<div className="media-body">
-							<h5 className="mt-0">{store.people[params.theid].name}</h5>
+							<h5 className="mt-0">{store.planets[params.theid].name}</h5>
 							Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
 							Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc
 							ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
@@ -26,12 +26,14 @@ export const DetailPeople = () => {
 				</div>
 				<div className="col-4 bg-light pt-2">
 					<ul className="list-unstyled font-weight-bold">
-						<li>Birth Year: {store.people[params.theid].birth_year}</li>
-						<li>Eye Color: {store.people[params.theid].eye_color}</li>
-						<li>Gender: {store.people[params.theid].gender}</li>
-						<li>Hair Color: {store.people[params.theid].hair_color}</li>
-						<li>Mass: {store.people[params.theid].mass}</li>
-						<li>Skin Color: {store.people[params.theid].skin_color}</li>
+						<li>Diameter: {store.planets[params.theid].diameter}</li>
+						<li>Rotation Period: {store.planets[params.theid].rotation_period}</li>
+						<li>Orbital Period: {store.planets[params.theid].orbital_period}</li>
+						<li>Gravity: {store.planets[params.theid].gravity}</li>
+						<li>Population: {store.planets[params.theid].population}</li>
+						<li>Climate: {store.planets[params.theid].climate}</li>
+						<li>Terrain: {store.planets[params.theid].terrain}</li>
+						<li>Surface Water: {store.planets[params.theid].surface_water}</li>
 					</ul>
 				</div>
 			</div>
@@ -43,16 +45,17 @@ export const DetailPeople = () => {
 	);
 };
 
-DetailPeople.propTypes = {
+DetailPlanets.propTypes = {
 	name: PropTypes.string,
-	age: PropTypes.string,
-	height: PropTypes.string,
-	mass: PropTypes.string,
-	hair_color: PropTypes.string,
-	skin_color: PropTypes.string,
-	eye_color: PropTypes.string,
+	diameter: PropTypes.string,
+	rotation_period: PropTypes.string,
+	orbital_period: PropTypes.string,
+	gravity: PropTypes.string,
+	population: PropTypes.string,
+	climate: PropTypes.string,
+	terrain: PropTypes.string,
+	surface_water: PropTypes.string,
 	url: PropTypes.string,
 	key: PropTypes.number,
-	gender: PropTypes.string,
 	match: PropTypes.object
 };

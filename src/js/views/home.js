@@ -51,7 +51,7 @@ export const Home = () => {
 								climate={planets.climate}
 								terrain={planets.terrain}
 								surface_water={planets.surface_water}
-								residents={planets.residents}
+								url={planets.url}
 								key={index}
 							/>
 						);
