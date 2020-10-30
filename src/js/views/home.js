@@ -6,6 +6,7 @@ import "bootstrap-horizon/src/bootstrap-horizon.css";
 import Card from "./card";
 import PlanetCard from "./planetcard";
 import VehicleCard from "./vehiclecard";
+import DetailPeople from "./detailpeople";
 
 import "../../styles/home.scss";
 
@@ -27,7 +28,8 @@ export const Home = () => {
 								skin_color={people.skin_color}
 								eye_color={people.eye_color}
 								gender={people.gender}
-								key={index}
+								url={people.url}
+								key={index} // index
 							/>
 						);
 					})}

@@ -10,9 +10,9 @@ function VehicleCard(props) {
 				<div className="card" style={{ width: "18rem" }}>
 					<img className="card-img-top" src="https://www.dummyimage.com/400x200" alt="Card image cap" />
 					<div className="card-body">
-						<h5 className="card-title text-left">{props.name}</h5>
-						<p className="card-text">Manufacturer: {props.manufacturer}</p>
-						<p className="card-text">Model: {props.model}</p>
+						<h5 className="card-title text-left text-truncate">{props.name}</h5>
+						<p className="card-text text-truncate">Manufacturer: {props.manufacturer}</p>
+						<p className="card-text text-truncate">Model: {props.model}</p>
 						<p className="card-text">Passengers: {props.passengers}</p>
 						<button
 							type="button"
