@@ -4,7 +4,8 @@ import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 function PlanetCard(props) {
-	var idplanets = props.url.replace("http://swapi.dev/api/planets/", "").replace("/", "") - 1;
+	var idplanets = props.id;
+	// var idplanets = props.url.replace("http://swapi.dev/api/planets/", "").replace("/", "") - 1;
 	return (
 		<div className="col">
 			<div className="card-group">
@@ -40,6 +41,7 @@ PlanetCard.propTypes = {
 	climate: PropTypes.string,
 	terrain: PropTypes.string,
 	url: PropTypes.string,
+	id: PropTypes.any,
 	surface_water: PropTypes.string
 };
 

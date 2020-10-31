@@ -4,7 +4,8 @@ import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 function Card(props) {
-	var idpeople = props.url.replace("http://swapi.dev/api/people/", "").replace("/", "") - 1;
+	var idpeople = props.id;
+	//props.url.replace("http://swapi.dev/api/people/", "").replace("/", "") - 1;
 	return (
 		<div className="col">
 			<div className="card-group">
@@ -39,7 +40,7 @@ Card.propTypes = {
 	skin_color: PropTypes.string,
 	eye_color: PropTypes.string,
 	url: PropTypes.string,
-	key: PropTypes.number,
+	id: PropTypes.any,
 	gender: PropTypes.string
 };
 

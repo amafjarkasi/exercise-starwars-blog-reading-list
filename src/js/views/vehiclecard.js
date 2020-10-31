@@ -1,9 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Popup from "reactjs-popup";
-import "reactjs-popup/dist/index.css";
+import { Link, useParams } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 function VehicleCard(props) {
+	var idvehicles = props.id;
+	// console.log(props.id);
+	// console.log(Object.values(props));
+	// console.log(props.url);
+	//props.url.replace("http://swapi.dev/api/vehicles/", "").replace("/", "") - 1;
 	return (
 		<div className="col">
 			<div className="card-group">
@@ -14,13 +19,11 @@ function VehicleCard(props) {
 						<p className="card-text text-truncate">Manufacturer: {props.manufacturer}</p>
 						<p className="card-text text-truncate">Model: {props.model}</p>
 						<p className="card-text">Passengers: {props.passengers}</p>
-						<button
-							type="button"
-							className="btn btn-outline-primary"
-							data-toggle="modal"
-							data-target=".bd-example-modal-lg">
-							Learn more
-						</button>
+						<Link to={"/detailvehicles/" + idvehicles}>
+							<button type="button" className="btn btn-outline-primary">
+								Learn more
+							</button>
+						</Link>
 						<button type="button" className="btn btn-outline-danger ml-3">
 							<i className="far fa-heart" />
 						</button>
@@ -42,6 +45,8 @@ VehicleCard.propTypes = {
 	passengers: PropTypes.string,
 	max_atmosphering_speed: PropTypes.string,
 	cargo_capacity: PropTypes.string,
+	url: PropTypes.string,
+	id: PropTypes.any,
 	consumables: PropTypes.string
 };
 
